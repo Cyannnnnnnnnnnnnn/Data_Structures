@@ -4,6 +4,8 @@
  */
 package com.mycompany.data_structures;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author Chan
@@ -16,15 +18,18 @@ public class Main_Form extends javax.swing.JFrame {
     public Main_Form() {
         initComponents();
         // Crear y agregar los paneles personalizados
-        panel_Main.add(new Panel_Secuential_Data(), "Secuencial");
-        panel_Main.add(new Panel_Matrix(), "Matriz");
-        panel_Main.add(new Panel_Linkedlist(), "Pila");
-        panel_Main.add(new Panel_List_Interface(), "Secuencial");
-        panel_Main.add(new Panel_Stack(), "Matriz");
-        panel_Main.add(new Panel_Queue(), "Pila");
-        panel_Main.add(new Panel_Dynamicarray(), "Secuencial");
-        panel_Main.add(new Panel_Tree(), "Matriz");
-        panel_Main.add(new Panel_Heap(), "Pila");
+        panel_Main.add(new Panel_Inicio(), "Inicio");
+        panel_Main.add(new Panel_Secuential_Data(), "Secuential");
+        panel_Main.add(new Panel_Matrix(), "Matrix");
+        panel_Main.add(new Panel_Linkedlist(), "LinkedList");
+        panel_Main.add(new Panel_List_Interface(), "ListInterface");
+        panel_Main.add(new Panel_Stack(), "Stack");
+        panel_Main.add(new Panel_Queue(), "Queue");
+        panel_Main.add(new Panel_Dynamicarray(), "DynamicArray");
+        panel_Main.add(new Panel_Tree(), "Tree");
+        panel_Main.add(new Panel_Heap(), "Heap");
+        CardLayout cl = (CardLayout) panel_Main.getLayout();
+        cl.show(panel_Main, "Inicio");
     }
 
     /**
@@ -51,6 +56,11 @@ public class Main_Form extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btn_Secuentialdata.setText("Secuential data");
+        btn_Secuentialdata.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SecuentialdataActionPerformed(evt);
+            }
+        });
 
         btn_Matrix.setText("Matrix");
 
@@ -117,6 +127,11 @@ public class Main_Form extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_SecuentialdataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SecuentialdataActionPerformed
+        CardLayout cl = (CardLayout) panel_Main.getLayout();
+        cl.show(panel_Main, "Secuential");
+    }//GEN-LAST:event_btn_SecuentialdataActionPerformed
 
     /**
      * @param args the command line arguments
