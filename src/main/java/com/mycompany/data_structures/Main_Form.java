@@ -63,6 +63,11 @@ public class Main_Form extends javax.swing.JFrame {
         });
 
         btn_Matrix.setText("Matrix");
+        btn_Matrix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_MatrixActionPerformed(evt);
+            }
+        });
 
         btn_Linkedlist.setText("Linked List");
 
@@ -100,23 +105,23 @@ public class Main_Form extends javax.swing.JFrame {
             panel_ButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_ButtonsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btn_Secuentialdata)
+                .addComponent(btn_Secuentialdata, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Matrix)
+                .addComponent(btn_Matrix, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Listinterface)
+                .addComponent(btn_Listinterface, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Linkedlist)
+                .addComponent(btn_Linkedlist, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Stack)
+                .addComponent(btn_Stack, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Queue)
+                .addComponent(btn_Queue, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Dynamicarray)
+                .addComponent(btn_Dynamicarray, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Tree)
+                .addComponent(btn_Tree, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Heap)
+                .addComponent(btn_Heap, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(7, Short.MAX_VALUE))
         );
 
@@ -132,6 +137,11 @@ public class Main_Form extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) panel_Main.getLayout();
         cl.show(panel_Main, "Secuential");
     }//GEN-LAST:event_btn_SecuentialdataActionPerformed
+
+    private void btn_MatrixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MatrixActionPerformed
+        CardLayout cl = (CardLayout) panel_Main.getLayout();
+        cl.show(panel_Main, "Matrix");
+    }//GEN-LAST:event_btn_MatrixActionPerformed
 
     /**
      * @param args the command line arguments

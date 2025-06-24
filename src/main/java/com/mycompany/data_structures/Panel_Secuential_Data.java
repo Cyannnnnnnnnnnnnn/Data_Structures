@@ -296,7 +296,7 @@ public class Panel_Secuential_Data extends javax.swing.JPanel {
         panel_Data.revalidate();
         panel_Data.repaint();
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Add;
     private javax.swing.JButton btn_Getvalue;
