@@ -13,6 +13,8 @@ public class Main {
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(() -> {
             Main_Form mainWindow = new Main_Form();  // Usa tu JFrame principal
+            mainWindow.setSize(600, 400);
+            mainWindow.setLocationRelativeTo(null);
             mainWindow.setVisible(true);
         });
     }

@@ -19,8 +19,10 @@ public class Panel_Secuential_Data extends javax.swing.JPanel {
     
     private final ArrayList<String> dataList = new ArrayList<>();
     
+    
     public Panel_Secuential_Data() {
         initComponents();
+        panel_Data.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
         refreshPanelData();
     }
 
@@ -39,12 +41,13 @@ public class Panel_Secuential_Data extends javax.swing.JPanel {
         btn_Add = new javax.swing.JButton();
         btn_Remove = new javax.swing.JButton();
         lbl__Data = new javax.swing.JLabel();
-        panel_Data = new javax.swing.JPanel();
         lbl__Index = new javax.swing.JLabel();
-        lbl__Result = new javax.swing.JLabel();
+        lbl_Result = new javax.swing.JLabel();
         txt_Index = new javax.swing.JTextField();
-        txt_Result = new javax.swing.JTextField();
         btn_Getvalue = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        panel_Data = new javax.swing.JPanel();
+        lbl_Result1 = new javax.swing.JLabel();
 
         lbl_Title.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -74,26 +77,13 @@ public class Panel_Secuential_Data extends javax.swing.JPanel {
         lbl__Data.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl__Data.setText("Data:");
 
-        javax.swing.GroupLayout panel_DataLayout = new javax.swing.GroupLayout(panel_Data);
-        panel_Data.setLayout(panel_DataLayout);
-        panel_DataLayout.setHorizontalGroup(
-            panel_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 372, Short.MAX_VALUE)
-        );
-        panel_DataLayout.setVerticalGroup(
-            panel_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 37, Short.MAX_VALUE)
-        );
-
         lbl__Index.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl__Index.setText("Index:");
 
-        lbl__Result.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl__Result.setText("Result");
+        lbl_Result.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_Result.setText("Result");
 
         txt_Index.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        txt_Result.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         btn_Getvalue.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btn_Getvalue.setText("Get value");
@@ -102,6 +92,23 @@ public class Panel_Secuential_Data extends javax.swing.JPanel {
                 btn_GetvalueActionPerformed(evt);
             }
         });
+
+        panel_Data.setMaximumSize(new java.awt.Dimension(372, 32767));
+
+        javax.swing.GroupLayout panel_DataLayout = new javax.swing.GroupLayout(panel_Data);
+        panel_Data.setLayout(panel_DataLayout);
+        panel_DataLayout.setHorizontalGroup(
+            panel_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 372, Short.MAX_VALUE)
+        );
+        panel_DataLayout.setVerticalGroup(
+            panel_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 112, Short.MAX_VALUE)
+        );
+
+        jScrollPane1.setViewportView(panel_Data);
+
+        lbl_Result1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -112,30 +119,33 @@ public class Panel_Secuential_Data extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_Title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 6, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl__Index, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_Index, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_Getvalue))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(lbl__Data, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lbl__Entervalue, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txt_Value, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btn_Add)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btn_Remove))
-                                .addComponent(panel_Data, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl__Result, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lbl__Index, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txt_Index, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btn_Getvalue))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lbl_Result, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lbl_Result1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lbl__Data, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lbl__Entervalue, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txt_Value, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn_Add)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn_Remove)))))
+                        .addGap(7, 7, 7)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -152,17 +162,17 @@ public class Panel_Secuential_Data extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl__Data)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panel_Data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl__Index)
                     .addComponent(txt_Index, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_Getvalue))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl__Result)
-                    .addComponent(txt_Result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addComponent(lbl_Result)
+                    .addComponent(lbl_Result1))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -179,12 +189,12 @@ public class Panel_Secuential_Data extends javax.swing.JPanel {
         try {
             int index = Integer.parseInt(txt_Index.getText());
             if (index >= 0 && index < dataList.size()) {
-                txt_Result.setText(dataList.get(index));
+                lbl_Result1.setText(dataList.get(index));
             } else {
-                txt_Result.setText("Invalid index");
+                lbl_Result1.setText("Invalid index");
             }
         } catch (NumberFormatException e) {
-            txt_Result.setText("Enter number");
+            lbl_Result1.setText("Enter number");
         }
     }//GEN-LAST:event_btn_GetvalueActionPerformed
 
@@ -213,14 +223,15 @@ public class Panel_Secuential_Data extends javax.swing.JPanel {
     private javax.swing.JButton btn_Add;
     private javax.swing.JButton btn_Getvalue;
     private javax.swing.JButton btn_Remove;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_Result;
+    private javax.swing.JLabel lbl_Result1;
     private javax.swing.JLabel lbl_Title;
     private javax.swing.JLabel lbl__Data;
     private javax.swing.JLabel lbl__Entervalue;
     private javax.swing.JLabel lbl__Index;
-    private javax.swing.JLabel lbl__Result;
     private javax.swing.JPanel panel_Data;
     private javax.swing.JTextField txt_Index;
-    private javax.swing.JTextField txt_Result;
     private javax.swing.JTextField txt_Value;
     // End of variables declaration//GEN-END:variables
 }
