@@ -4,12 +4,16 @@
  */
 package com.mycompany.data_structures;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Chan
  */
 public class Panel_Linkedlist extends javax.swing.JPanel {
-
+    
+    Linkedlist lista = new Linkedlist();
+    
     /**
      * Creates new form Panel_Linkedlist
      */
@@ -29,10 +33,10 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         txt_Value = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_Add = new javax.swing.JButton();
+        btn_Remove = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtArea_Show = new javax.swing.JTextArea();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -43,15 +47,26 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Value:");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setText("jButton1");
+        btn_Add.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_Add.setText("Add");
+        btn_Add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AddActionPerformed(evt);
+            }
+        });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setText("jButton2");
+        btn_Remove.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_Remove.setText("Remove First");
+        btn_Remove.setToolTipText("");
+        btn_Remove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RemoveActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtArea_Show.setColumns(20);
+        txtArea_Show.setRows(5);
+        jScrollPane1.setViewportView(txtArea_Show);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -66,9 +81,9 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_Add, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_Remove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(24, 24, 24))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -91,22 +106,45 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
                     .addComponent(txt_Value))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btn_Add)
+                    .addComponent(btn_Remove))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AddActionPerformed
+        try {
+            String valor = txt_Value.getText();
+            if ("".equals(valor)){
+                return;
+            }
+            lista.agregarFinal(valor); // agregamos a la lista
+            txtArea_Show.setText(lista.mostrarLista()); // actualizamos el área de texto
+            txt_Value.setText(""); // limpiamos el campo de entrada
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Insert valid value.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btn_AddActionPerformed
+
+    private void btn_RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RemoveActionPerformed
+        try {
+            lista.eliminarPrimero();
+            txtArea_Show.setText(lista.mostrarLista());  // actualiza el área de texto
+        } catch (IllegalStateException e) {
+            JOptionPane.showMessageDialog(this, "No values in the list.", "", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btn_RemoveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn_Add;
+    private javax.swing.JButton btn_Remove;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txtArea_Show;
     private javax.swing.JTextField txt_Value;
     // End of variables declaration//GEN-END:variables
 }

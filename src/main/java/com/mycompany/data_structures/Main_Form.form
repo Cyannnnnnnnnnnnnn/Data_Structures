@@ -97,11 +97,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Linked List"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_LinkedlistActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_Listinterface">
           <Properties>
             <Property name="text" type="java.lang.String" value="List interface"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ListinterfaceActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_Dynamicarray">
           <Properties>

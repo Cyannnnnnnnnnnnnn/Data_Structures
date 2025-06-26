@@ -70,8 +70,18 @@ public class Main_Form extends javax.swing.JFrame {
         });
 
         btn_Linkedlist.setText("Linked List");
+        btn_Linkedlist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_LinkedlistActionPerformed(evt);
+            }
+        });
 
         btn_Listinterface.setText("List interface");
+        btn_Listinterface.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ListinterfaceActionPerformed(evt);
+            }
+        });
 
         btn_Dynamicarray.setText("Dynamic array");
 
@@ -142,6 +152,16 @@ public class Main_Form extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) panel_Main.getLayout();
         cl.show(panel_Main, "Matrix");
     }//GEN-LAST:event_btn_MatrixActionPerformed
+
+    private void btn_ListinterfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ListinterfaceActionPerformed
+        CardLayout cl = (CardLayout) panel_Main.getLayout();
+        cl.show(panel_Main, "ListInterface");
+    }//GEN-LAST:event_btn_ListinterfaceActionPerformed
+
+    private void btn_LinkedlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LinkedlistActionPerformed
+        CardLayout cl = (CardLayout) panel_Main.getLayout();
+        cl.show(panel_Main, "LinkedList");
+    }//GEN-LAST:event_btn_LinkedlistActionPerformed
 
     /**
      * @param args the command line arguments
