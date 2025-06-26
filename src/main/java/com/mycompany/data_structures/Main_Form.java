@@ -25,7 +25,6 @@ public class Main_Form extends javax.swing.JFrame {
         panel_Main.add(new Panel_List_Interface(), "ListInterface");
         panel_Main.add(new Panel_Stack(), "Stack");
         panel_Main.add(new Panel_Queue(), "Queue");
-        panel_Main.add(new Panel_Dynamicarray(), "DynamicArray");
         panel_Main.add(new Panel_Tree(), "Tree");
         panel_Main.add(new Panel_Heap(), "Heap");
         CardLayout cl = (CardLayout) panel_Main.getLayout();
@@ -46,7 +45,6 @@ public class Main_Form extends javax.swing.JFrame {
         btn_Matrix = new javax.swing.JButton();
         btn_Linkedlist = new javax.swing.JButton();
         btn_Listinterface = new javax.swing.JButton();
-        btn_Dynamicarray = new javax.swing.JButton();
         btn_Tree = new javax.swing.JButton();
         btn_Queue = new javax.swing.JButton();
         btn_Stack = new javax.swing.JButton();
@@ -80,13 +78,6 @@ public class Main_Form extends javax.swing.JFrame {
         btn_Listinterface.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ListinterfaceActionPerformed(evt);
-            }
-        });
-
-        btn_Dynamicarray.setText("Dynamic array");
-        btn_Dynamicarray.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_DynamicarrayActionPerformed(evt);
             }
         });
 
@@ -131,7 +122,6 @@ public class Main_Form extends javax.swing.JFrame {
                     .addComponent(btn_Listinterface, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_Linkedlist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_Stack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Dynamicarray, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_Tree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_Heap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -141,21 +131,19 @@ public class Main_Form extends javax.swing.JFrame {
             .addGroup(panel_ButtonsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btn_Secuentialdata, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(8, 8, 8)
                 .addComponent(btn_Matrix, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_Listinterface, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_Linkedlist, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_Stack, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_Queue, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Dynamicarray, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_Tree, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_Heap, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(7, Short.MAX_VALUE))
         );
@@ -197,11 +185,6 @@ public class Main_Form extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) panel_Main.getLayout();
         cl.show(panel_Main, "Queue");
     }//GEN-LAST:event_btn_QueueActionPerformed
-
-    private void btn_DynamicarrayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DynamicarrayActionPerformed
-        CardLayout cl = (CardLayout) panel_Main.getLayout();
-        cl.show(panel_Main, "DynamicArray");
-    }//GEN-LAST:event_btn_DynamicarrayActionPerformed
 
     private void btn_TreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TreeActionPerformed
         CardLayout cl = (CardLayout) panel_Main.getLayout();
@@ -249,7 +232,6 @@ public class Main_Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Dynamicarray;
     private javax.swing.JButton btn_Heap;
     private javax.swing.JButton btn_Linkedlist;
     private javax.swing.JButton btn_Listinterface;

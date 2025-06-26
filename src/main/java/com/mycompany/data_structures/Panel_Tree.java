@@ -4,12 +4,16 @@
  */
 package com.mycompany.data_structures;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Chan
  */
 public class Panel_Tree extends javax.swing.JPanel {
-
+    
+    private BinarySearchTree bst = new BinarySearchTree();
+    
     /**
      * Creates new form Panel_Tree
      */
@@ -26,19 +30,138 @@ public class Panel_Tree extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        txtValue = new javax.swing.JTextField();
+        btn_Inorder = new javax.swing.JButton();
+        btn_Preorder = new javax.swing.JButton();
+        btn_Postorder = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtTreeOutput = new javax.swing.JTextArea();
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Tree");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("Value:");
+
+        jButton1.setText("Insert");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        btn_Inorder.setText("Inorder");
+        btn_Inorder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_InorderActionPerformed(evt);
+            }
+        });
+
+        btn_Preorder.setText("Preorder");
+        btn_Preorder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_PreorderActionPerformed(evt);
+            }
+        });
+
+        btn_Postorder.setText("Postorder");
+        btn_Postorder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_PostorderActionPerformed(evt);
+            }
+        });
+
+        txtTreeOutput.setColumns(20);
+        txtTreeOutput.setRows(5);
+        jScrollPane1.setViewportView(txtTreeOutput);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(txtValue, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(48, 48, 48))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_Inorder, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Preorder, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Postorder, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jButton1)
+                    .addComponent(txtValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Inorder)
+                    .addComponent(btn_Preorder)
+                    .addComponent(btn_Postorder))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            int value = Integer.parseInt(txtValue.getText());
+            bst.insert(value);
+            txtValue.setText("");
+            JOptionPane.showMessageDialog(this, "Node inserted!");
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid integer.");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btn_InorderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InorderActionPerformed
+        txtTreeOutput.setText("Inorder: " + bst.inorder());
+    }//GEN-LAST:event_btn_InorderActionPerformed
+
+    private void btn_PreorderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PreorderActionPerformed
+        txtTreeOutput.setText("Preorder: " + bst.preorder());
+    }//GEN-LAST:event_btn_PreorderActionPerformed
+
+    private void btn_PostorderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PostorderActionPerformed
+        txtTreeOutput.setText("Postorder: " + bst.postorder());
+    }//GEN-LAST:event_btn_PostorderActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Inorder;
+    private javax.swing.JButton btn_Postorder;
+    private javax.swing.JButton btn_Preorder;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtTreeOutput;
+    private javax.swing.JTextField txtValue;
     // End of variables declaration//GEN-END:variables
 }

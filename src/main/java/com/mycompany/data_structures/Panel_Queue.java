@@ -4,12 +4,18 @@
  */
 package com.mycompany.data_structures;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Chan
  */
 public class Panel_Queue extends javax.swing.JPanel {
-
+    
+    private Queue<String> queue = new LinkedList<>();
+    
     /**
      * Creates new form Panel_Queue
      */
@@ -26,19 +32,156 @@ public class Panel_Queue extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txt_Value = new javax.swing.JTextField();
+        btn_Enqueue = new javax.swing.JButton();
+        btn_Dequeue = new javax.swing.JButton();
+        btn_Peek = new javax.swing.JButton();
+        btn_Clear = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtArea_Values = new javax.swing.JTextArea();
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Queue");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("Insert value:");
+
+        btn_Enqueue.setText("Enqueue");
+        btn_Enqueue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EnqueueActionPerformed(evt);
+            }
+        });
+
+        btn_Dequeue.setText("Dequeue");
+        btn_Dequeue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DequeueActionPerformed(evt);
+            }
+        });
+
+        btn_Peek.setText("Peek");
+        btn_Peek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_PeekActionPerformed(evt);
+            }
+        });
+
+        btn_Clear.setText("Clear");
+        btn_Clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ClearActionPerformed(evt);
+            }
+        });
+
+        txtArea_Values.setColumns(20);
+        txtArea_Values.setRows(5);
+        jScrollPane1.setViewportView(txtArea_Values);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 21, Short.MAX_VALUE)
+                        .addComponent(btn_Enqueue)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Dequeue)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Peek)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Clear)
+                        .addGap(16, 16, 16))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel2)
+                        .addGap(54, 54, 54)
+                        .addComponent(txt_Value, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txt_Value, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Enqueue)
+                    .addComponent(btn_Dequeue)
+                    .addComponent(btn_Peek)
+                    .addComponent(btn_Clear))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_EnqueueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EnqueueActionPerformed
+        String value = txt_Value.getText().trim();
+        if (!value.isEmpty()) {
+            queue.add(value);
+            updateQueueText();
+            txt_Value.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Enter a value to enqueue.");
+        }
+    }//GEN-LAST:event_btn_EnqueueActionPerformed
+
+    private void btn_DequeueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DequeueActionPerformed
+        if (!queue.isEmpty()) {
+            String removed = queue.poll();
+            updateQueueText();
+            JOptionPane.showMessageDialog(this, "Removed: " + removed);
+        } else {
+            JOptionPane.showMessageDialog(this, "Queue is empty.");
+        }
+    }//GEN-LAST:event_btn_DequeueActionPerformed
+
+    private void btn_PeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PeekActionPerformed
+        if (!queue.isEmpty()) {
+            String front = queue.peek();
+            JOptionPane.showMessageDialog(this, "Front: " + front);
+        } else {
+            JOptionPane.showMessageDialog(this, "Queue is empty.");
+        }
+    }//GEN-LAST:event_btn_PeekActionPerformed
+
+    private void btn_ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ClearActionPerformed
+        queue.clear();
+        updateQueueText();
+    }//GEN-LAST:event_btn_ClearActionPerformed
+    
+    private void updateQueueText() {
+        StringBuilder sb = new StringBuilder();
+        int i = 0;
+        for (String item : queue) {
+            sb.append(i++).append(": ").append(item).append("\n");
+        }
+        txtArea_Values.setText(sb.toString());
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Clear;
+    private javax.swing.JButton btn_Dequeue;
+    private javax.swing.JButton btn_Enqueue;
+    private javax.swing.JButton btn_Peek;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtArea_Values;
+    private javax.swing.JTextField txt_Value;
     // End of variables declaration//GEN-END:variables
 }
