@@ -84,14 +84,39 @@ public class Main_Form extends javax.swing.JFrame {
         });
 
         btn_Dynamicarray.setText("Dynamic array");
+        btn_Dynamicarray.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DynamicarrayActionPerformed(evt);
+            }
+        });
 
         btn_Tree.setText("Tree");
+        btn_Tree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_TreeActionPerformed(evt);
+            }
+        });
 
         btn_Queue.setText("Queue");
+        btn_Queue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_QueueActionPerformed(evt);
+            }
+        });
 
         btn_Stack.setText("Stack");
+        btn_Stack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_StackActionPerformed(evt);
+            }
+        });
 
         btn_Heap.setText("Heap");
+        btn_Heap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_HeapActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_ButtonsLayout = new javax.swing.GroupLayout(panel_Buttons);
         panel_Buttons.setLayout(panel_ButtonsLayout);
@@ -162,6 +187,31 @@ public class Main_Form extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) panel_Main.getLayout();
         cl.show(panel_Main, "LinkedList");
     }//GEN-LAST:event_btn_LinkedlistActionPerformed
+
+    private void btn_StackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_StackActionPerformed
+        CardLayout cl = (CardLayout) panel_Main.getLayout();
+        cl.show(panel_Main, "Stack");
+    }//GEN-LAST:event_btn_StackActionPerformed
+
+    private void btn_QueueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_QueueActionPerformed
+        CardLayout cl = (CardLayout) panel_Main.getLayout();
+        cl.show(panel_Main, "Queue");
+    }//GEN-LAST:event_btn_QueueActionPerformed
+
+    private void btn_DynamicarrayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DynamicarrayActionPerformed
+        CardLayout cl = (CardLayout) panel_Main.getLayout();
+        cl.show(panel_Main, "DynamicArray");
+    }//GEN-LAST:event_btn_DynamicarrayActionPerformed
+
+    private void btn_TreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TreeActionPerformed
+        CardLayout cl = (CardLayout) panel_Main.getLayout();
+        cl.show(panel_Main, "Tree");
+    }//GEN-LAST:event_btn_TreeActionPerformed
+
+    private void btn_HeapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HeapActionPerformed
+        CardLayout cl = (CardLayout) panel_Main.getLayout();
+        cl.show(panel_Main, "Heap");
+    }//GEN-LAST:event_btn_HeapActionPerformed
 
     /**
      * @param args the command line arguments

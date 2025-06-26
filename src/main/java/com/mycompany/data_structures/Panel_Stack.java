@@ -4,12 +4,17 @@
  */
 package com.mycompany.data_structures;
 
+import java.util.Stack;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Chan
  */
 public class Panel_Stack extends javax.swing.JPanel {
-
+    
+    private Stack<String> pila = new Stack<>();
+    
     /**
      * Creates new form Panel_Stack
      */
@@ -26,19 +31,159 @@ public class Panel_Stack extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txt_Value = new javax.swing.JTextField();
+        btn_Push = new javax.swing.JButton();
+        btn_Pop = new javax.swing.JButton();
+        btn_Peek = new javax.swing.JButton();
+        btn_Clear = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtArea_Stack = new javax.swing.JTextArea();
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("jLabel1");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("Text:");
+
+        btn_Push.setText("Push");
+        btn_Push.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_PushActionPerformed(evt);
+            }
+        });
+
+        btn_Pop.setText("Pop");
+        btn_Pop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_PopActionPerformed(evt);
+            }
+        });
+
+        btn_Peek.setText("Peek");
+        btn_Peek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_PeekActionPerformed(evt);
+            }
+        });
+
+        btn_Clear.setText("Clear");
+        btn_Clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ClearActionPerformed(evt);
+            }
+        });
+
+        txtArea_Stack.setColumns(20);
+        txtArea_Stack.setRows(5);
+        jScrollPane1.setViewportView(txtArea_Stack);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btn_Push, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btn_Pop)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btn_Peek)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btn_Clear))
+                                    .addComponent(txt_Value))))
+                        .addGap(0, 15, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txt_Value, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Push)
+                    .addComponent(btn_Pop)
+                    .addComponent(btn_Peek)
+                    .addComponent(btn_Clear))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void actualizarTexto() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = pila.size() - 1; i >= 0; i--) {
+            sb.append(i).append(": ").append(pila.get(i)).append("\n");
+        }
+        txtArea_Stack.setText(sb.toString());
+    }
+
+    
+    private void btn_PushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PushActionPerformed
+        String valor = txt_Value.getText().trim();
+
+        if (!valor.isEmpty()) {
+            pila.push(valor);
+            actualizarTexto();
+            txt_Value.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Insert a value.");
+        }
+    }//GEN-LAST:event_btn_PushActionPerformed
+
+    private void btn_PopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PopActionPerformed
+        if (!pila.isEmpty()) {
+            String eliminado = pila.pop();
+            actualizarTexto();
+            JOptionPane.showMessageDialog(this, "Deleted element: " + eliminado);
+        } else {
+            JOptionPane.showMessageDialog(this, "Stack is empty");
+        }
+    }//GEN-LAST:event_btn_PopActionPerformed
+
+    private void btn_PeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PeekActionPerformed
+        if (!pila.isEmpty()) {
+            String tope = pila.peek();
+            JOptionPane.showMessageDialog(this, "On the top: " + tope);
+        } else {
+            JOptionPane.showMessageDialog(this, "Stack is empty");
+        }
+    }//GEN-LAST:event_btn_PeekActionPerformed
+
+    private void btn_ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ClearActionPerformed
+        pila.clear();
+        actualizarTexto();
+    }//GEN-LAST:event_btn_ClearActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Clear;
+    private javax.swing.JButton btn_Peek;
+    private javax.swing.JButton btn_Pop;
+    private javax.swing.JButton btn_Push;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtArea_Stack;
+    private javax.swing.JTextField txt_Value;
     // End of variables declaration//GEN-END:variables
 }
