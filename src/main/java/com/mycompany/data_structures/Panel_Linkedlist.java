@@ -40,7 +40,7 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Linked List");
 
         txt_Value.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
