@@ -5,6 +5,8 @@
 package com.mycompany.data_structures;
 
 import java.awt.CardLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
@@ -18,18 +20,18 @@ public class Main_Form extends javax.swing.JFrame {
     public Main_Form() {
         initComponents();
         // Crear y agregar los paneles personalizados
-        panel_Main.add(new Panel_Inicio(), "Inicio");
-        panel_Main.add(new Panel_Secuential_Data(), "Secuential");
-        panel_Main.add(new Panel_Matrix(), "Matrix");
-        panel_Main.add(new Panel_Linkedlist(), "LinkedList");
-        panel_Main.add(new Panel_List_Interface(), "ListInterface");
-        panel_Main.add(new Panel_Stack(), "Stack");
-        panel_Main.add(new Panel_Queue(), "Queue");
-        panel_Main.add(new Panel_Tree(), "Tree");
-        panel_Main.add(new Panel_Heap(), "Heap");
-        CardLayout cl = (CardLayout) panel_Main.getLayout();
-        cl.show(panel_Main, "Inicio");
+        
     }
+    
+    public void mostrarVentana(String titulo, JPanel panel) {
+        JFrame ventana = new JFrame(titulo);
+        ventana.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        ventana.setSize(600, 400);
+        ventana.setLocationRelativeTo(null);
+        ventana.add(panel);
+        ventana.setVisible(true);
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,7 +51,15 @@ public class Main_Form extends javax.swing.JFrame {
         btn_Queue = new javax.swing.JButton();
         btn_Stack = new javax.swing.JButton();
         btn_Heap = new javax.swing.JButton();
-        panel_Main = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,56 +155,111 @@ public class Main_Form extends javax.swing.JFrame {
                 .addComponent(btn_Tree, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_Heap, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         getContentPane().add(panel_Buttons, java.awt.BorderLayout.LINE_START);
 
-        panel_Main.setLayout(new java.awt.CardLayout());
-        getContentPane().add(panel_Main, java.awt.BorderLayout.CENTER);
+        jButton1.setText("PDF");
+
+        jButton2.setText("PDF");
+
+        jButton3.setText("PDF");
+
+        jButton4.setText("PDF");
+
+        jButton5.setText("PDF");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("PDF");
+
+        jButton7.setText("PDF");
+
+        jButton8.setText("PDF");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_SecuentialdataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SecuentialdataActionPerformed
-        CardLayout cl = (CardLayout) panel_Main.getLayout();
-        cl.show(panel_Main, "Secuential");
+        mostrarVentana("Secuential Data", new Panel_Secuential_Data());
     }//GEN-LAST:event_btn_SecuentialdataActionPerformed
 
     private void btn_MatrixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MatrixActionPerformed
-        CardLayout cl = (CardLayout) panel_Main.getLayout();
-        cl.show(panel_Main, "Matrix");
+        mostrarVentana("Matrix", new Panel_Matrix());
     }//GEN-LAST:event_btn_MatrixActionPerformed
 
     private void btn_ListinterfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ListinterfaceActionPerformed
-        CardLayout cl = (CardLayout) panel_Main.getLayout();
-        cl.show(panel_Main, "ListInterface");
+        mostrarVentana("List Interface", new Panel_List_Interface());
     }//GEN-LAST:event_btn_ListinterfaceActionPerformed
 
     private void btn_LinkedlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LinkedlistActionPerformed
-        CardLayout cl = (CardLayout) panel_Main.getLayout();
-        cl.show(panel_Main, "LinkedList");
+        mostrarVentana("Linked List", new Panel_Linkedlist());
     }//GEN-LAST:event_btn_LinkedlistActionPerformed
 
     private void btn_StackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_StackActionPerformed
-        CardLayout cl = (CardLayout) panel_Main.getLayout();
-        cl.show(panel_Main, "Stack");
+        mostrarVentana("Stack", new Panel_Stack());
     }//GEN-LAST:event_btn_StackActionPerformed
 
     private void btn_QueueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_QueueActionPerformed
-        CardLayout cl = (CardLayout) panel_Main.getLayout();
-        cl.show(panel_Main, "Queue");
+        mostrarVentana("Queue", new Panel_Queue());
     }//GEN-LAST:event_btn_QueueActionPerformed
 
     private void btn_TreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TreeActionPerformed
-        CardLayout cl = (CardLayout) panel_Main.getLayout();
-        cl.show(panel_Main, "Tree");
+        mostrarVentana("Tree", new Panel_Tree());
     }//GEN-LAST:event_btn_TreeActionPerformed
 
     private void btn_HeapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HeapActionPerformed
-        CardLayout cl = (CardLayout) panel_Main.getLayout();
-        cl.show(panel_Main, "Heap");
+        new Panel_Heap().setVisible(true);
     }//GEN-LAST:event_btn_HeapActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,7 +305,15 @@ public class Main_Form extends javax.swing.JFrame {
     private javax.swing.JButton btn_Secuentialdata;
     private javax.swing.JButton btn_Stack;
     private javax.swing.JButton btn_Tree;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel panel_Buttons;
-    private javax.swing.JPanel panel_Main;
     // End of variables declaration//GEN-END:variables
 }

@@ -34,45 +34,37 @@ public class Panel_Stack extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txt_Value = new javax.swing.JTextField();
-        btn_Push = new javax.swing.JButton();
-        btn_Pop = new javax.swing.JButton();
-        btn_Peek = new javax.swing.JButton();
-        btn_Clear = new javax.swing.JButton();
+        btn_Visit = new javax.swing.JButton();
+        btn_Atras = new javax.swing.JButton();
+        btn_Salir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtArea_Stack = new javax.swing.JTextArea();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Stack");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Text:");
+        jLabel2.setText("URL:");
 
-        btn_Push.setText("Push");
-        btn_Push.addActionListener(new java.awt.event.ActionListener() {
+        btn_Visit.setText("Visit");
+        btn_Visit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_PushActionPerformed(evt);
+                btn_VisitActionPerformed(evt);
             }
         });
 
-        btn_Pop.setText("Pop");
-        btn_Pop.addActionListener(new java.awt.event.ActionListener() {
+        btn_Atras.setText("Atras");
+        btn_Atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_PopActionPerformed(evt);
+                btn_AtrasActionPerformed(evt);
             }
         });
 
-        btn_Peek.setText("Peek");
-        btn_Peek.addActionListener(new java.awt.event.ActionListener() {
+        btn_Salir.setText("Salir");
+        btn_Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_PeekActionPerformed(evt);
-            }
-        });
-
-        btn_Clear.setText("Clear");
-        btn_Clear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ClearActionPerformed(evt);
+                btn_SalirActionPerformed(evt);
             }
         });
 
@@ -93,19 +85,18 @@ public class Panel_Stack extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btn_Push, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btn_Pop)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btn_Peek)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btn_Clear))
-                                    .addComponent(txt_Value))))
-                        .addGap(0, 15, Short.MAX_VALUE)))
+                                .addComponent(txt_Value, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btn_Visit)))
+                        .addGap(0, 15, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(btn_Atras, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -116,16 +107,15 @@ public class Panel_Stack extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txt_Value, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_Value, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Visit))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Push)
-                    .addComponent(btn_Pop)
-                    .addComponent(btn_Peek)
-                    .addComponent(btn_Clear))
+                    .addComponent(btn_Atras)
+                    .addComponent(btn_Salir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -138,48 +128,39 @@ public class Panel_Stack extends javax.swing.JPanel {
     }
 
     
-    private void btn_PushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PushActionPerformed
-        String valor = txt_Value.getText().trim();
-
-        if (!valor.isEmpty()) {
-            pila.push(valor);
-            actualizarTexto();
+    private void btn_VisitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VisitActionPerformed
+        String url = txt_Value.getText().trim();
+        if (url.startsWith("www.") && url.endsWith(".com")) {
+            String nombre = url.substring(4, url.length() - 4); // www.google.com → google
+            pila.push(nombre);
             txt_Value.setText("");
+            txtArea_Stack.setText("Página actual: " + nombre);
         } else {
-            JOptionPane.showMessageDialog(this, "Insert a value.");
+            JOptionPane.showMessageDialog(this, "Ingresa una URL válida (www.sitio.com)");
         }
-    }//GEN-LAST:event_btn_PushActionPerformed
+    }//GEN-LAST:event_btn_VisitActionPerformed
 
-    private void btn_PopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PopActionPerformed
+    private void btn_AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtrasActionPerformed
         if (!pila.isEmpty()) {
-            String eliminado = pila.pop();
-            actualizarTexto();
-            JOptionPane.showMessageDialog(this, "Deleted element: " + eliminado);
-        } else {
-            JOptionPane.showMessageDialog(this, "Stack is empty");
+            pila.pop();
         }
-    }//GEN-LAST:event_btn_PopActionPerformed
-
-    private void btn_PeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PeekActionPerformed
         if (!pila.isEmpty()) {
-            String tope = pila.peek();
-            JOptionPane.showMessageDialog(this, "On the top: " + tope);
+            txtArea_Stack.setText("Página actual: " + pila.peek());
         } else {
-            JOptionPane.showMessageDialog(this, "Stack is empty");
+            txtArea_Stack.setText("Sin historial disponible");
         }
-    }//GEN-LAST:event_btn_PeekActionPerformed
+    }//GEN-LAST:event_btn_AtrasActionPerformed
 
-    private void btn_ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ClearActionPerformed
+    private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed
         pila.clear();
-        actualizarTexto();
-    }//GEN-LAST:event_btn_ClearActionPerformed
+        txtArea_Stack.setText("Sin historial disponible");
+    }//GEN-LAST:event_btn_SalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Clear;
-    private javax.swing.JButton btn_Peek;
-    private javax.swing.JButton btn_Pop;
-    private javax.swing.JButton btn_Push;
+    private javax.swing.JButton btn_Atras;
+    private javax.swing.JButton btn_Salir;
+    private javax.swing.JButton btn_Visit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

@@ -6,6 +6,8 @@ package com.mycompany.data_structures;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import javax.swing.JOptionPane;
 
 /**
@@ -34,43 +36,21 @@ public class Panel_List_Interface extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         txt_Value = new javax.swing.JTextField();
-        btn_Add = new javax.swing.JButton();
-        btn_Delete = new javax.swing.JButton();
-        btn_Search = new javax.swing.JButton();
-        btn_Clean = new javax.swing.JButton();
+        Finalizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtArea_Lista = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
+        btn_Eliminar = new javax.swing.JButton();
+        btn_Agregar = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("List interface");
 
-        btn_Add.setText("Add");
-        btn_Add.addActionListener(new java.awt.event.ActionListener() {
+        Finalizar.setText("Finalizar");
+        Finalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_AddActionPerformed(evt);
-            }
-        });
-
-        btn_Delete.setText("Delete");
-        btn_Delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_DeleteActionPerformed(evt);
-            }
-        });
-
-        btn_Search.setText("Search");
-        btn_Search.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_SearchActionPerformed(evt);
-            }
-        });
-
-        btn_Clean.setText("Clean");
-        btn_Clean.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_CleanActionPerformed(evt);
+                FinalizarActionPerformed(evt);
             }
         });
 
@@ -78,7 +58,21 @@ public class Panel_List_Interface extends javax.swing.JPanel {
         txtArea_Lista.setRows(5);
         jScrollPane1.setViewportView(txtArea_Lista);
 
-        jLabel2.setText("Value:");
+        jLabel2.setText("Producto:");
+
+        btn_Eliminar.setText("Eliminar");
+        btn_Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EliminarActionPerformed(evt);
+            }
+        });
+
+        btn_Agregar.setText("Agregar");
+        btn_Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AgregarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -89,22 +83,28 @@ public class Panel_List_Interface extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txt_Value))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn_Add)
-                                .addGap(18, 18, 18)
-                                .addComponent(btn_Delete)
-                                .addGap(18, 18, 18)
-                                .addComponent(btn_Search)
-                                .addGap(18, 18, 18)
-                                .addComponent(btn_Clean, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(0, 10, Short.MAX_VALUE)))
+                                .addGap(6, 6, 6)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btn_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btn_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Finalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txt_Value))))
+                        .addGap(0, 11, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -118,70 +118,65 @@ public class Panel_List_Interface extends javax.swing.JPanel {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Add)
-                    .addComponent(btn_Delete)
-                    .addComponent(btn_Search)
-                    .addComponent(btn_Clean))
+                    .addComponent(Finalizar)
+                    .addComponent(btn_Eliminar)
+                    .addComponent(btn_Agregar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(9, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void actualizarTexto() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < lista.size(); i++) {
-            sb.append(i).append(": ").append(lista.get(i)).append("\n");
+    private void FinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizarActionPerformed
+        Set<String> sinDuplicados = new LinkedHashSet<>(lista); // conserva orden
+        StringBuilder resultado = new StringBuilder();
+        for (String producto : sinDuplicados) {
+            resultado.append(producto).append("\n");
         }
-        txtArea_Lista.setText(sb.toString());
+        txtArea_Lista.setText(resultado.toString());
+
+    }//GEN-LAST:event_FinalizarActionPerformed
+
+    private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
+        String producto = txt_Value.getText().trim();
+        if (!producto.isEmpty()) {
+            lista.removeIf(p -> p.equals(producto)); // elimina todos los iguales
+            txt_Value.setText("");
+            actualizarVistaParcial();
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingresa el producto a eliminar.");
+        }
+    }//GEN-LAST:event_btn_EliminarActionPerformed
+
+    private void btn_AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarActionPerformed
+        String producto = txt_Value.getText().trim();
+        if (!producto.isEmpty()) {
+            lista.add(producto);
+            txt_Value.setText("");
+            actualizarVistaParcial();
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingresa un producto.");
+        }
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_AgregarActionPerformed
+
+    private void actualizarVistaParcial() {
+        StringBuilder temp = new StringBuilder();
+        for (int i = 0; i < lista.size(); i++) {
+            temp.append(i).append(": ").append(lista.get(i)).append("\n");
+        }
+        txtArea_Lista.setText(temp.toString());
     }
 
+
     
-    private void btn_CleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CleanActionPerformed
-        lista.clear();
-        actualizarTexto();
-    }//GEN-LAST:event_btn_CleanActionPerformed
-
-    private void btn_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AddActionPerformed
-        String valor = txt_Value.getText().trim();
-
-        if (!valor.isEmpty()) {
-            lista.add(valor);
-            actualizarTexto();
-            txt_Value.setText("");
-        } else {
-            JOptionPane.showMessageDialog(this, "Ingresa un valor para agregar.");
-        }
-    }//GEN-LAST:event_btn_AddActionPerformed
-
-    private void btn_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DeleteActionPerformed
-        String valor = txt_Value.getText().trim();
-
-        if (lista.remove(valor)) {
-            actualizarTexto();
-            txt_Value.setText("");
-        } else {
-            JOptionPane.showMessageDialog(this, "El elemento no está en la lista.");
-        }
-    }//GEN-LAST:event_btn_DeleteActionPerformed
-
-    private void btn_SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SearchActionPerformed
-        String valor = txt_Value.getText().trim();
-        int index = lista.indexOf(valor);
-
-        if (index != -1) {
-            JOptionPane.showMessageDialog(this, "Elemento encontrado en la posición: " + index);
-        } else {
-            JOptionPane.showMessageDialog(this, "Elemento no encontrado.");
-        }
-    }//GEN-LAST:event_btn_SearchActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Add;
-    private javax.swing.JButton btn_Clean;
-    private javax.swing.JButton btn_Delete;
-    private javax.swing.JButton btn_Search;
+    private javax.swing.JButton Finalizar;
+    private javax.swing.JButton btn_Agregar;
+    private javax.swing.JButton btn_Eliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

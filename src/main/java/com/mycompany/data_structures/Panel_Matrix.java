@@ -36,15 +36,30 @@ public class Panel_Matrix extends javax.swing.JPanel {
         txt_Matrixaab = new javax.swing.JTextField();
         txt_Matrixaba = new javax.swing.JTextField();
         txt_Matrixabb = new javax.swing.JTextField();
-        txt_Matrixbaa = new javax.swing.JTextField();
-        txt_Matrixbab = new javax.swing.JTextField();
-        txt_Matrixbba = new javax.swing.JTextField();
-        txt_Matrixbbb = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         txt_Resultaa = new javax.swing.JTextField();
         txt_Resultab = new javax.swing.JTextField();
         txt_Resultba = new javax.swing.JTextField();
         txt_Resultbb = new javax.swing.JTextField();
+        txt_Matrixaca = new javax.swing.JTextField();
+        txt_Matrixacb = new javax.swing.JTextField();
+        txt_Matrixaac = new javax.swing.JTextField();
+        txt_Matrixabc = new javax.swing.JTextField();
+        txt_Matrixacc = new javax.swing.JTextField();
+        txt_Resultac = new javax.swing.JTextField();
+        txt_Resultbc = new javax.swing.JTextField();
+        txt_Resultca = new javax.swing.JTextField();
+        txt_Resultcb = new javax.swing.JTextField();
+        txt_Resultcc = new javax.swing.JTextField();
+        txt_Matrixbaa = new javax.swing.JTextField();
+        txt_Matrixbcc = new javax.swing.JTextField();
+        txt_Matrixbab = new javax.swing.JTextField();
+        txt_Matrixbba = new javax.swing.JTextField();
+        txt_Matrixbca = new javax.swing.JTextField();
+        txt_Matrixbcb = new javax.swing.JTextField();
+        txt_Matrixbbb = new javax.swing.JTextField();
+        txt_Matrixbbc = new javax.swing.JTextField();
+        txt_Matrixbac = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -74,6 +89,16 @@ public class Panel_Matrix extends javax.swing.JPanel {
 
         txt_Resultbb.setEditable(false);
 
+        txt_Resultac.setEditable(false);
+
+        txt_Resultbc.setEditable(false);
+
+        txt_Resultca.setEditable(false);
+
+        txt_Resultcb.setEditable(false);
+
+        txt_Resultcc.setEditable(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,7 +107,7 @@ public class Panel_Matrix extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
@@ -98,9 +123,19 @@ public class Panel_Matrix extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(txt_Matrixaba, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_Matrixabb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                                    .addComponent(txt_Matrixabb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txt_Matrixaca, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_Matrixacb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txt_Matrixaac, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_Matrixabc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_Matrixacc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -110,55 +145,101 @@ public class Panel_Matrix extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(txt_Matrixbba, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_Matrixbbb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txt_Resultaa, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_Resultab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txt_Matrixbbb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txt_Resultba, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_Resultbb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(24, 24, 24))))
+                                    .addComponent(txt_Matrixbca, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_Matrixbcb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txt_Matrixbac, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_Matrixbbc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_Matrixbcc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(19, 19, 19))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txt_Resultac, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_Resultbc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txt_Resultaa, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_Resultab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txt_Resultba, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_Resultbb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_Resultcc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txt_Resultca, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txt_Resultcb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txt_Matrixaaa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_Matrixaab, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txt_Matrixaba, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_Matrixabb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(txt_Matrixbaa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txt_Matrixbab, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(txt_Matrixbba, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txt_Matrixbbb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(txt_Matrixbaa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txt_Matrixbab, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(txt_Matrixbba, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txt_Matrixbbb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txt_Matrixbca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_Matrixbcb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_Matrixbac, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txt_Matrixbbc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_Matrixbcc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(txt_Matrixaaa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txt_Matrixaab, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(txt_Matrixaba, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txt_Matrixabb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txt_Matrixaca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_Matrixacb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_Matrixaac, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txt_Matrixabc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_Matrixacc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(2, 2, 2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1)))
+                            .addComponent(jButton1))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txt_Resultaa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -167,44 +248,69 @@ public class Panel_Matrix extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txt_Resultba, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_Resultbb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                                .addComponent(txt_Resultbb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_Resultac, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_Resultbc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txt_Resultca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_Resultcb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_Resultcc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            int[][] A = new int[2][2];
-            int[][] B = new int[2][2];
-            int[][] R = new int[2][2];
+            int[][] semana1 = new int[3][3];
+            int[][] semana2 = new int[3][3];
+            int[][] total = new int[3][3];
 
-            // Leer matriz A
-            A[0][0] = Integer.parseInt(txt_Matrixaaa.getText());
-            A[0][1] = Integer.parseInt(txt_Matrixaba.getText());
-            A[1][0] = Integer.parseInt(txt_Matrixaab.getText());
-            A[1][1] = Integer.parseInt(txt_Matrixabb.getText());
+            // Leer entradas de semana 1
+            semana1[0][0] = Integer.parseInt(txt_Matrixaaa.getText());
+            semana1[0][1] = Integer.parseInt(txt_Matrixaba.getText());
+            semana1[0][2] = Integer.parseInt(txt_Matrixaca.getText());
+            semana1[1][0] = Integer.parseInt(txt_Matrixaab.getText());
+            semana1[1][1] = Integer.parseInt(txt_Matrixabb.getText());
+            semana1[1][2] = Integer.parseInt(txt_Matrixacb.getText());
+            semana1[2][0] = Integer.parseInt(txt_Matrixaac.getText());
+            semana1[2][1] = Integer.parseInt(txt_Matrixabc.getText());
+            semana1[2][2] = Integer.parseInt(txt_Matrixacc.getText());
+            semana2[0][0] = Integer.parseInt(txt_Matrixbaa.getText());
+            semana2[0][1] = Integer.parseInt(txt_Matrixbba.getText());
+            semana2[0][2] = Integer.parseInt(txt_Matrixbca.getText());
+            semana2[1][0] = Integer.parseInt(txt_Matrixbab.getText());
+            semana2[1][1] = Integer.parseInt(txt_Matrixbbb.getText());
+            semana2[1][2] = Integer.parseInt(txt_Matrixbcb.getText());
+            semana2[2][0] = Integer.parseInt(txt_Matrixbac.getText());
+            semana2[2][1] = Integer.parseInt(txt_Matrixbbc.getText());
+            semana2[2][2] = Integer.parseInt(txt_Matrixbcc.getText());
 
-            // Leer matriz B
-            B[0][0] = Integer.parseInt(txt_Matrixbaa.getText());
-            B[0][1] = Integer.parseInt(txt_Matrixbba.getText());
-            B[1][0] = Integer.parseInt(txt_Matrixbab.getText());
-            B[1][1] = Integer.parseInt(txt_Matrixbbb.getText());
-
-            // Sumar
-            for (int i = 0; i < 2; i++) {
-                for (int j = 0; j < 2; j++) {
-                    R[i][j] = A[i][j] + B[i][j];
+            // Calcular suma
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    total[i][j] = semana1[i][j] + semana2[i][j];
                 }
             }
 
             // Mostrar resultado
-            txt_Resultaa.setText(String.valueOf(R[0][0]));
-            txt_Resultba.setText(String.valueOf(R[0][1]));
-            txt_Resultab.setText(String.valueOf(R[1][0]));
-            txt_Resultbb.setText(String.valueOf(R[1][1]));
+            txt_Resultaa.setText(String.valueOf(total[0][0]));
+            txt_Resultba.setText(String.valueOf(total[0][1]));
+            txt_Resultca.setText(String.valueOf(total[0][2]));
+            txt_Resultab.setText(String.valueOf(total[1][0]));
+            txt_Resultbb.setText(String.valueOf(total[1][1]));
+            txt_Resultcb.setText(String.valueOf(total[1][2]));
+            txt_Resultac.setText(String.valueOf(total[2][0]));
+            txt_Resultbc.setText(String.valueOf(total[2][1]));
+            txt_Resultcc.setText(String.valueOf(total[2][2]));
+            
+            // ... y así con todos los campos
 
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Por favor ingresa solo números válidos.");
+            JOptionPane.showMessageDialog(this, "Ingresa solo números válidos.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -217,15 +323,30 @@ public class Panel_Matrix extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txt_Matrixaaa;
     private javax.swing.JTextField txt_Matrixaab;
+    private javax.swing.JTextField txt_Matrixaac;
     private javax.swing.JTextField txt_Matrixaba;
     private javax.swing.JTextField txt_Matrixabb;
+    private javax.swing.JTextField txt_Matrixabc;
+    private javax.swing.JTextField txt_Matrixaca;
+    private javax.swing.JTextField txt_Matrixacb;
+    private javax.swing.JTextField txt_Matrixacc;
     private javax.swing.JTextField txt_Matrixbaa;
     private javax.swing.JTextField txt_Matrixbab;
+    private javax.swing.JTextField txt_Matrixbac;
     private javax.swing.JTextField txt_Matrixbba;
     private javax.swing.JTextField txt_Matrixbbb;
+    private javax.swing.JTextField txt_Matrixbbc;
+    private javax.swing.JTextField txt_Matrixbca;
+    private javax.swing.JTextField txt_Matrixbcb;
+    private javax.swing.JTextField txt_Matrixbcc;
     private javax.swing.JTextField txt_Resultaa;
     private javax.swing.JTextField txt_Resultab;
+    private javax.swing.JTextField txt_Resultac;
     private javax.swing.JTextField txt_Resultba;
     private javax.swing.JTextField txt_Resultbb;
+    private javax.swing.JTextField txt_Resultbc;
+    private javax.swing.JTextField txt_Resultca;
+    private javax.swing.JTextField txt_Resultcb;
+    private javax.swing.JTextField txt_Resultcc;
     // End of variables declaration//GEN-END:variables
 }
