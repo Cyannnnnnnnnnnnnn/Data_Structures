@@ -35,10 +35,8 @@ public class Panel_Queue extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txt_Value = new javax.swing.JTextField();
-        btn_Enqueue = new javax.swing.JButton();
-        btn_Dequeue = new javax.swing.JButton();
-        btn_Peek = new javax.swing.JButton();
-        btn_Clear = new javax.swing.JButton();
+        btn_Llegar = new javax.swing.JButton();
+        btn_Atender = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtArea_Values = new javax.swing.JTextArea();
 
@@ -47,33 +45,25 @@ public class Panel_Queue extends javax.swing.JPanel {
         jLabel1.setText("Queue");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Insert value:");
+        jLabel2.setText("Nombre:");
 
-        btn_Enqueue.setText("Enqueue");
-        btn_Enqueue.addActionListener(new java.awt.event.ActionListener() {
+        txt_Value.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_EnqueueActionPerformed(evt);
+                txt_ValueActionPerformed(evt);
             }
         });
 
-        btn_Dequeue.setText("Dequeue");
-        btn_Dequeue.addActionListener(new java.awt.event.ActionListener() {
+        btn_Llegar.setText("Llegar");
+        btn_Llegar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_DequeueActionPerformed(evt);
+                btn_LlegarActionPerformed(evt);
             }
         });
 
-        btn_Peek.setText("Peek");
-        btn_Peek.addActionListener(new java.awt.event.ActionListener() {
+        btn_Atender.setText("Atender");
+        btn_Atender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_PeekActionPerformed(evt);
-            }
-        });
-
-        btn_Clear.setText("Clear");
-        btn_Clear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ClearActionPerformed(evt);
+                btn_AtenderActionPerformed(evt);
             }
         });
 
@@ -91,21 +81,17 @@ public class Panel_Queue extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 21, Short.MAX_VALUE)
-                        .addComponent(btn_Enqueue)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_Dequeue)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_Peek)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_Clear)
-                        .addGap(16, 16, 16))
+                        .addGap(6, 6, 6)
+                        .addComponent(btn_Llegar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_Atender, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jLabel2)
-                        .addGap(54, 54, 54)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                         .addComponent(txt_Value, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(41, 41, 41)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -114,70 +100,60 @@ public class Panel_Queue extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(txt_Value, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(txt_Value, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Enqueue)
-                    .addComponent(btn_Dequeue)
-                    .addComponent(btn_Peek)
-                    .addComponent(btn_Clear))
+                    .addComponent(btn_Llegar)
+                    .addComponent(btn_Atender))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_EnqueueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EnqueueActionPerformed
-        String value = txt_Value.getText().trim();
-        if (!value.isEmpty()) {
-            queue.add(value);
-            updateQueueText();
-            txt_Value.setText("");
-        } else {
-            JOptionPane.showMessageDialog(this, "Enter a value to enqueue.");
+    private void actualizarVistaCola() {
+        if (queue.isEmpty()) {
+            txtArea_Values.setText("No hay personas en la cola.");
+            return;
         }
-    }//GEN-LAST:event_btn_EnqueueActionPerformed
-
-    private void btn_DequeueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DequeueActionPerformed
-        if (!queue.isEmpty()) {
-            String removed = queue.poll();
-            updateQueueText();
-            JOptionPane.showMessageDialog(this, "Removed: " + removed);
-        } else {
-            JOptionPane.showMessageDialog(this, "Queue is empty.");
-        }
-    }//GEN-LAST:event_btn_DequeueActionPerformed
-
-    private void btn_PeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PeekActionPerformed
-        if (!queue.isEmpty()) {
-            String front = queue.peek();
-            JOptionPane.showMessageDialog(this, "Front: " + front);
-        } else {
-            JOptionPane.showMessageDialog(this, "Queue is empty.");
-        }
-    }//GEN-LAST:event_btn_PeekActionPerformed
-
-    private void btn_ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ClearActionPerformed
-        queue.clear();
-        updateQueueText();
-    }//GEN-LAST:event_btn_ClearActionPerformed
-    
-    private void updateQueueText() {
         StringBuilder sb = new StringBuilder();
-        int i = 0;
-        for (String item : queue) {
-            sb.append(i++).append(": ").append(item).append("\n");
+        for (String nombre : queue) {
+            sb.append(nombre).append("\n");
         }
         txtArea_Values.setText(sb.toString());
     }
+    
+    private void btn_LlegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LlegarActionPerformed
+        String nombre = txt_Value.getText().trim();
+        if (!nombre.isEmpty()) {
+            queue.add(nombre);
+            txt_Value.setText("");
+            actualizarVistaCola();
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingresa un nombre.");
+        }
+    }//GEN-LAST:event_btn_LlegarActionPerformed
+
+    private void btn_AtenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtenderActionPerformed
+        if (!queue.isEmpty()) {
+            String atendido = queue.poll();
+            JOptionPane.showMessageDialog(this, "Atendiendo a: " + atendido);
+            actualizarVistaCola();
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay personas en la cola.");
+        }
+    }//GEN-LAST:event_btn_AtenderActionPerformed
+
+    private void txt_ValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ValueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_ValueActionPerformed
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Clear;
-    private javax.swing.JButton btn_Dequeue;
-    private javax.swing.JButton btn_Enqueue;
-    private javax.swing.JButton btn_Peek;
+    private javax.swing.JButton btn_Atender;
+    private javax.swing.JButton btn_Llegar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

@@ -119,15 +119,6 @@ public class Panel_Stack extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void actualizarTexto() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = pila.size() - 1; i >= 0; i--) {
-            sb.append(i).append(": ").append(pila.get(i)).append("\n");
-        }
-        txtArea_Stack.setText(sb.toString());
-    }
-
-    
     private void btn_VisitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VisitActionPerformed
         String url = txt_Value.getText().trim();
         if (url.startsWith("www.") && url.endsWith(".com")) {

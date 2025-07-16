@@ -4,6 +4,7 @@
  */
 package com.mycompany.data_structures;
 
+import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,11 +13,13 @@ import javax.swing.JOptionPane;
  */
 public class Panel_Linkedlist extends javax.swing.JPanel {
     
-    Linkedlist lista = new Linkedlist();
-    
+    private LinkedList<String> tareas = new LinkedList<>();
+
     /**
      * Creates new form Panel_Linkedlist
      */
+    
+    
     public Panel_Linkedlist() {
         initComponents();
     }
@@ -31,24 +34,24 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txt_Value = new javax.swing.JTextField();
+        txt_Tarea = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btn_Add = new javax.swing.JButton();
         btn_Remove = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtArea_Show = new javax.swing.JTextArea();
+        txtArea_Tareas = new javax.swing.JTextArea();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Linked List");
 
-        txt_Value.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_Tarea.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Value:");
+        jLabel2.setText("Tarea:");
 
         btn_Add.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btn_Add.setText("Add");
+        btn_Add.setText("Añadir");
         btn_Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_AddActionPerformed(evt);
@@ -56,7 +59,7 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
         });
 
         btn_Remove.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btn_Remove.setText("Remove First");
+        btn_Remove.setText("Remover");
         btn_Remove.setToolTipText("");
         btn_Remove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,9 +67,9 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
             }
         });
 
-        txtArea_Show.setColumns(20);
-        txtArea_Show.setRows(5);
-        jScrollPane1.setViewportView(txtArea_Show);
+        txtArea_Tareas.setColumns(20);
+        txtArea_Tareas.setRows(5);
+        jScrollPane1.setViewportView(txtArea_Tareas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -82,16 +85,15 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn_Add, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_Remove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_Value, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)))))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_Tarea, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 35, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(btn_Add, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Remove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -102,7 +104,7 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_Value))
+                    .addComponent(txt_Tarea))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Add)
@@ -114,27 +116,38 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AddActionPerformed
-        try {
-            String valor = txt_Value.getText();
-            if ("".equals(valor)){
-                return;
-            }
-            lista.agregarFinal(valor); // agregamos a la lista
-            txtArea_Show.setText(lista.mostrarLista()); // actualizamos el área de texto
-            txt_Value.setText(""); // limpiamos el campo de entrada
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Insert valid value.", "Error", JOptionPane.ERROR_MESSAGE);
+        String tarea = txt_Tarea.getText().trim();
+        if (!tarea.isEmpty()) {
+            tareas.add(tarea);
+            txt_Tarea.setText("");
+            actualizarVistaTareas();
         }
     }//GEN-LAST:event_btn_AddActionPerformed
 
     private void btn_RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RemoveActionPerformed
-        try {
-            lista.eliminarPrimero();
-            txtArea_Show.setText(lista.mostrarLista());  // actualiza el área de texto
-        } catch (IllegalStateException e) {
-            JOptionPane.showMessageDialog(this, "No values in the list.", "", JOptionPane.WARNING_MESSAGE);
+        String tarea = txt_Tarea.getText().trim();
+        if (tareas.isEmpty()) {
+            txtArea_Tareas.setText("Sin tareas pendientes");
+        } else if (tareas.contains(tarea)) {
+            tareas.remove(tarea);
+            txt_Tarea.setText("");
+            actualizarVistaTareas();
+        } else {
+            JOptionPane.showMessageDialog(this, "Tarea no encontrada");
         }
     }//GEN-LAST:event_btn_RemoveActionPerformed
+
+    private void actualizarVistaTareas() {
+        if (tareas.isEmpty()) {
+            txtArea_Tareas.setText("Sin tareas pendientes");
+            return;
+        }
+        StringBuilder sb = new StringBuilder();
+        for (String t : tareas) {
+            sb.append("- ").append(t).append("\n");
+        }
+        txtArea_Tareas.setText(sb.toString());
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -143,7 +156,7 @@ public class Panel_Linkedlist extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtArea_Show;
-    private javax.swing.JTextField txt_Value;
+    private javax.swing.JTextArea txtArea_Tareas;
+    private javax.swing.JTextField txt_Tarea;
     // End of variables declaration//GEN-END:variables
 }
